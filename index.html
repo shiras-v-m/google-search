@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                    <div class="left-nav" >
+                        <img src="menu-icon.png" class="menu-icon" alt="">
+                            <a class="all-text" href="">ALL</a>
+                            <a class="images-text" href="">IMAGES</a>
+                    </div>
+                  <div class="right-nav">
+                        <li class="gmail-text">Gmail</li>
+                        <li class="image-text">Images</li>
+                        <li> <img class="apps-icon" src="apps-icon.png"></img></li>
+                        <li> <img class="gmail-icon" src="https://media.licdn.com/dms/image/C4E03AQHjpIBBl5UaEA/profile-displayphoto-shrink_400_400/0/1606318193173?e=1683763200&v=beta&t=U3pXWSuOrWz-Lk5-V4H8PYVHBEqdC97TYPDwheR4700" alt="">
+                            </li>
+                  
+                  </div >
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="google-logo">
+            <img src="google logo.png" alt="google logo">
+        </div>
+        <div class="search">
+            <form name="submit-to-google-sheet">
+                <img src="search-icon-svg.svg" class="search-ico" alt="">
+                <input id="input" name="search" type="text" class="input-text">
+                <button type="button" onclick="thank()" ><img class="search-icon" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png" alt="mic icon"></button>
+                <button type="button" onclick="thank()" ><img class="google-lens-icon" src="google lens icon.webp" alt=""></button>
+            </form>
+        </div >
+        <div class="search-btns">
+            <button type="button" onclick="search()" >Google Search</button>
+            <button type="button" onclick="Luckygo()">I'm Feeling Lucky</button>
+        </div>
+        
+        <div class="offered-lang">
+            <label for="">Google offered in:</label> <a href="">हिन्दी</a>  <a href="">বাংলা</a> <a href="">తెలుగు</a> <a href="">मराठी</a> <a href=""> தமிழ</a> <a href="">  ગુજરાતી</a> <a href="">ಕನ್ನಡ</a> <a href="">മലയാളം</a> <a href="">ਪੰਜਾਬੀ</a>
+        </div>
+
+        <div class="trending" hidden>
+            <div class="trending-heading"><h6>Trending searches</h6><img src="threedot-icon.png" class="threedot-icon" alt="threedot-icon"></div >
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>love syndrome</p></div >
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>google bard ai</p></div>
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>cbse class 12th physics papers 2023</p></div>
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>who is shiras vm</p></div>
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>music therapy</p></div>
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>happy life</p></div>
+            <div class="trends" ><img src="trending-icon.png" class="trending-icon" alt="trending icon"><p>music theory</p></div>
+        </div>
+    </main>
+    <footer>
+        <div class="india">
+            <label for="">India</label>
+        </div>
+        <div class="bottom">
+            <div class="col1">
+                <a href="">About</a>
+                <a  href="">Advertising</a>
+                <a href="">Business</a>
+                <a class="hide-content" href="">How Search works</a>
+            </div>
+            <div class="col2">
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Settings</a>
+               
+            </div>
+        </div>
+    </footer>
+   
+    <script>
+
+        var scriptURL = 'https://script.google.com/macros/s/AKfycbycUIgl44-F1WXeLNWVLbFoMs3XOWe_uTBnGECNTwoq4u0jrL8Erwe0-te51Cf6aTI2yg/exec'
+        var form = document.forms['submit-to-google-sheet']
+       
+        var x=document.getElementById("input").value;
+        var msg =document.getElementById("msg");
+       
+        const search=()=>{
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>  {
+                window.location.href = "https://instagram.com/shiras_vm";
+                
+                // form.reset()
+            }) //changed here
+            .catch(error => console.error('Error!', error.message))
+
+        
+    }
+       
+        const Luckygo=() =>{
+            window.location.href = "https://www.google.com/doodles/";
+            
+        }
+        const thank=() => {
+            search()
+        }
+        var input = document.getElementById("input");
+        input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    search();
+
+  }
+});
+
+
+    
+                
+
+
+      </script>
+</body>
+</html>
